@@ -7,11 +7,9 @@ pth.ddomlab.org {
 }
 
 eln.ddomlab.org {
-	tls internal        # TEMPORARY: rehearsal only
 	reverse_proxy elabftw:443
 }
 
 eln.ddomlab.org:5000 {
-	tls internal        # TEMPORARY: rehearsal only
 	reverse_proxy pth:5000
 }
