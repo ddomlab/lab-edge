@@ -7,13 +7,11 @@ pth.ddomlab.org {
 }
 
 eln.ddomlab.org {
-	tls internal        # TEMPORARY: rehearsal only, remove before/at cutover
+	tls internal        # TEMPORARY: rehearsal only
 	reverse_proxy elabftw:443
 }
 
-# Compatibility: the Raspberry Pi sensor and MEDUSA still call
-# eln.ddomlab.org:5000/pth/*. Remove this block (and the 5000 port in
-# compose.yaml) once both have been repointed at pth.ddomlab.org.
 eln.ddomlab.org:5000 {
+	tls internal        # TEMPORARY: rehearsal only
 	reverse_proxy pth:5000
 }
