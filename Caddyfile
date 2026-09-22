@@ -7,7 +7,7 @@ pth.ddomlab.org {
 }
 
 eln.ddomlab.org {
-	reverse_proxy elabftw:80
+	reverse_proxy elabftw:443
 }
 
 # Compatibility: the Raspberry Pi sensor and MEDUSA still call
