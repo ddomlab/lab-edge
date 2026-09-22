@@ -10,7 +10,7 @@ services:
     ports:
       - "80:80"        # Let's Encrypt verification + redirect to HTTPS
       - "443:443"
-      # - "5000:5000"  # uncomment at cutover: old PTH address
+      - "5000:5000"    # compatibility: old PTH address (sensor + MEDUSA)
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile:ro
       - caddy_data:/data       # certificates live here - keep this volume

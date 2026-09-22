@@ -6,15 +6,13 @@ pth.ddomlab.org {
 	reverse_proxy pth:5000
 }
 
-# At cutover, add:
-#
-# eln.ddomlab.org {
-# 	reverse_proxy elabftw:443 {
-# 		transport http { tls_insecure_skip_verify }
-# 	}
-# }
-#
-# # compatibility: the sensor and MEDUSA still call eln.ddomlab.org:5000/pth/*
-# eln.ddomlab.org:5000 {
-# 	reverse_proxy pth:5000
-# }
+eln.ddomlab.org {
+	reverse_proxy elabftw:80
+}
+
+# Compatibility: the Raspberry Pi sensor and MEDUSA still call
+# eln.ddomlab.org:5000/pth/*. Remove this block (and the 5000 port in
+# compose.yaml) once both have been repointed at pth.ddomlab.org.
+eln.ddomlab.org:5000 {
+	reverse_proxy pth:5000
+}
