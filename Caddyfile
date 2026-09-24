@@ -8,6 +8,13 @@ pth.ddomlab.org {
 
 eln.ddomlab.org {
 	reverse_proxy elabftw:443
+	log {
+		output file /var/log/caddy/eln-access.log {
+			roll_size 10MiB
+			roll_keep 10
+			roll_keep_for 2160h
+		}
+	}
 }
 
 eln.ddomlab.org:5000 {
