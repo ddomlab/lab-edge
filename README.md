@@ -9,7 +9,7 @@ HTTPS certificates are obtained and renewed automatically, so no certbot on the 
 |---|---|
 | `pth.ddomlab.org` | `pth` container (PTH sensor API + dashboard) |
 | `eln.ddomlab.org` | eLabFTW *(added at cutover)* |
-| `eln.ddomlab.org:5000` | `pth` - compatibility for the sensor and MEDUSA *(added at cutover, removed once they are repointed)* |
+| `eln.ddomlab.org:5000` | `/pth/...` → `pth` (compatibility for the sensor and MEDUSA); everything else → `eln-server` (eln_server: scanner page, labels, autofill API) |
 
 Apps publish no ports of their own; only this project is exposed.
 
