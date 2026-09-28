@@ -17,7 +17,11 @@ services:
       - caddy_config:/config
       - /var/log/caddy:/var/log/caddy
     networks:
-      - lab-net
+      lab-net:
+        # containers on lab-net (e.g. eln-server) reach eLabFTW at its public name
+        # through Caddy directly: the server's firewall blocks containers from
+        # calling back in via its own public IP
+        aliases: [ eln.ddomlab.org ]
     logging:
       driver: json-file
       options: { max-size: "10m", max-file: "3" }
