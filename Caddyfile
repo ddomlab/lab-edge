@@ -7,7 +7,8 @@ pth.ddomlab.org {
 }
 
 eln.ddomlab.org {
-	reverse_proxy elabftw:443
+	# eLabFTW 6 listens on 8080 (5.x served plain HTTP on 443)
+	reverse_proxy elabftw:8080
 	log {
 		output file /var/log/caddy/eln-access.log {
 			roll_size 10MiB
