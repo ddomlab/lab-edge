@@ -10,7 +10,6 @@ HTTPS certificates are obtained and renewed automatically, so no certbot on the 
 | `pth.ddomlab.org` | `pth` container (PTH sensor API + dashboard) |
 | `eln.ddomlab.org` | eLabFTW *(added at cutover)* |
 | `elntoolkit.ddomlab.org` | `eln-server` (ELN Toolkit: scanner page, add-bottle page, labels) |
-| `eln.ddomlab.org:5000` | `/pth/...` → `pth` (compatibility for the sensor and MEDUSA); opening a page → redirect to `elntoolkit.ddomlab.org`; other requests (from Toolkit pages still open at this address) → `eln-server` |
 
 Apps publish no ports of their own; only this project is exposed.
 
