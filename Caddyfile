@@ -29,29 +29,3 @@ elntoolkit.ddomlab.org {
 		}
 	}
 }
-
-# The old lab-server address. The PTH sensor and MEDUSA still post to /pth/... here.
-# The ELN Toolkit moved to elntoolkit.ddomlab.org: opening a page here (a bookmark,
-# a typed address) redirects there, while requests from a Toolkit page still open
-# at this address keep working until it is reloaded.
-eln.ddomlab.org:5000 {
-	@pth path /pth /pth/*
-	handle @pth {
-		reverse_proxy pth:5000
-	}
-	# browsers send "Sec-Fetch-Mode: navigate" only when opening a page
-	@page header Sec-Fetch-Mode navigate
-	handle @page {
-		redir https://elntoolkit.ddomlab.org{uri} 308
-	}
-	handle {
-		reverse_proxy eln-server:5000
-	}
-	log {
-		output file /var/log/caddy/eln-5000-access.log {
-			roll_size 10MiB
-			roll_keep 10
-			roll_keep_for 2160h
-		}
-	}
-}
