@@ -10,6 +10,7 @@ HTTPS certificates are obtained and renewed automatically, so no certbot on the 
 | `pth.ddomlab.org` | `pth` container (PTH sensor API + dashboard) |
 | `eln.ddomlab.org` | eLabFTW *(added at cutover)* |
 | `elntoolkit.ddomlab.org` | `eln-server` (ELN Toolkit: scanner page, add-bottle page, labels) |
+| `graph.ddomlab.org` | `eln-graph` (ELN graph explorer + AI suggestions; ELN login required) |
 
 Apps publish no ports of their own; only this project is exposed.
 
